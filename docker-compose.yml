@@ -10,7 +10,7 @@ services:
       - StoreSettings__ConnectionString=mongodb://root:CosmicTopSecret@mongodb:27017/spark?authSource=admin
       - SparkSettings__Endpoint=http://localhost:5555/fhir
     ports:
-      - "5555:80"
+      - "5555:8080"
       - "44348:443"
     links:
       - mongodb
@@ -23,7 +23,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: CosmicTopSecret
     ports:
-      - "17017:27017"
+      - "27017:27017"
   mongosetup:
     container_name: mongosetup
     image: mongo
